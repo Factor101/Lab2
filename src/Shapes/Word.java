@@ -126,7 +126,7 @@ public class Word extends Shape
                     toAdd.add(new Rect(
                             x,
                             y - h,
-                            w * 3,
+                            w * 4,
                             h,
                             true
                     ));
@@ -134,13 +134,13 @@ public class Word extends Shape
                     toAdd.add(new Rect(
                             x,
                             y + h,
-                            w * 3,
+                            w * 4,
                             h,
                             true
                     ));
                     // right
                     toAdd.add(new Rect(
-                            x + (w * 2),
+                            x + (w * 3),
                             y + ((h + (h * scale)) / 3),
                             w,
                             (h + (h * scale)) / 3,
@@ -150,7 +150,7 @@ public class Word extends Shape
                     toAdd.add(new Rect(
                             x,
                             y + (h * scale) - h,
-                            w * 3,
+                            w * 4,
                             h,
                             true
                     ));
