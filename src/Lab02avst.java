@@ -13,6 +13,7 @@ public class Lab02avst extends Applet
     Sphere2D sphere;
     Flower flower;
     Inscribed insc;
+    Word apcs;
     public void init()
     {
         // resize
@@ -40,6 +41,11 @@ public class Lab02avst extends Applet
                 300,
                 300
         );
+        apcs = new Word(
+                new Point(100, 500),
+                20,
+                "APCS"
+        );
     }
     public void paint(@NotNull Graphics g)
     {
@@ -51,5 +57,7 @@ public class Lab02avst extends Applet
         flower.render(g);
         // render inscribed
         insc.render(g);
+        // render apcs
+        apcs.render(g);
     }
 }
