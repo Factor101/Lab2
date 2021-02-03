@@ -100,13 +100,13 @@ public class Word extends Shape
                     toAdd.add(new Rect(
                             x,
                             y - h,
-                            w * 3,
+                            w * 4,
                             h,
                             true
                     ));
                     // bottom
                     toAdd.add(new Rect(
-                            x,
+                            x + w,
                             y + (h * scale) - h,
                             w * 3,
                             h,
@@ -157,6 +157,7 @@ public class Word extends Shape
                     break;
             }
             letters.add(toAdd);
+            // move x to the right for next letter
             x += w * 5;
         }
     }
