@@ -1,6 +1,5 @@
 package Shapes;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class Sphere2D extends Shape
@@ -39,17 +38,17 @@ public class Sphere2D extends Shape
         // remove duplicate default oval
         ovalsB.remove(0);
     }
-    public void render(Graphics g)
+    public void render()
     {
         // render A
         for(Oval e : ovalsA)
         {
-            e.render(g);
+            e.render();
         }
         // render B
         for(Oval e : ovalsB)
         {
-            e.render(g);
+            e.render();
         }
     }
     public void changeOrigin(int x, int y) throws IllegalArgumentException

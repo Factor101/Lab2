@@ -1,8 +1,9 @@
+import Shapes.Shape;
+import Shapes.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.applet.Applet;
 import java.awt.*;
-import java.applet.*;
-import Shapes.*;
 
 public class Lab02avst extends Applet
 {
@@ -14,6 +15,8 @@ public class Lab02avst extends Applet
     Flower flower;
     Inscribed insc;
     Word apcs;
+    // tracks if graphics are defined for abstract shape class
+    public static boolean isGraphicsSet = false;
     public void init()
     {
         // resize
@@ -49,15 +52,20 @@ public class Lab02avst extends Applet
     }
     public void paint(@NotNull Graphics g)
     {
+        if(!isGraphicsSet) {
+            Shape.setGraphics(g);
+            // only called once
+            isGraphicsSet = true;
+        }
         // render cube
-        cube.render(g);
+        cube.render();
         // render sphere
-        sphere.render(g);
+        sphere.render();
         // render flower
-        flower.render(g);
+        flower.render();
         // render inscribed
-        insc.render(g);
+        insc.render();
         // render apcs
-        apcs.render(g);
+        apcs.render();
     }
 }

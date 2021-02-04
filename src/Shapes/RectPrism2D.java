@@ -1,19 +1,18 @@
 package Shapes;
 
-import java.awt.*;
 import javafx.util.Pair;
 
 public class RectPrism2D extends Shape
 {
-    private Pair<Rect, Rect> rects;
+    private final Pair<Rect, Rect> rects;
     // origin
     private int ox;
     private int oy;
     // new origin
-    private int nx;
-    private int ny;
-    private int w;
-    private int h;
+    private final int nx;
+    private final int ny;
+    private final int w;
+    private final int h;
     public RectPrism2D(Rect og)
     {
         ox = og.x;
@@ -24,10 +23,10 @@ public class RectPrism2D extends Shape
         h = og.h;
         rects = new Pair<>(og, new Rect(nx, ny, og.w, og.h, og.isFilled));
     }
-    public void render(Graphics g)
+    public void render()
     {
-        rects.getKey().render(g);
-        rects.getValue().render(g);
+        rects.getKey().render();
+        rects.getValue().render();
         // origin - origin
         g.drawLine(ox, oy, nx, ny);
         // top right

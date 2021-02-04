@@ -54,10 +54,10 @@ public class Inscribed extends Shape
                 false
         );
     }
-    public void render(Graphics g)
+    public void render()
     {
-        outer.render(g);
-        inner.render(g);
-        triangle.render(g);
+        outer.render();
+        inner.render();
+        triangle.render();
     }
 }

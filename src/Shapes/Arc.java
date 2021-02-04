@@ -1,5 +1,4 @@
 package Shapes;
-import java.awt.Graphics;
 
 public class Arc extends Shape
 {
@@ -15,7 +14,7 @@ public class Arc extends Shape
         e = _e;
         isFilled = _isFilled;
     }
-    public void render(Graphics g)
+    public void render()
     {
         if(isFilled) {
             g.fillArc(x, y, w, h, b, e);

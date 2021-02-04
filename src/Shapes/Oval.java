@@ -1,5 +1,4 @@
 package Shapes;
-import java.awt.*;
 
 public class Oval extends Shape
 {
@@ -13,7 +12,7 @@ public class Oval extends Shape
         h = _h;
         isFilled = _isFilled;
     }
-    public void render(Graphics g)
+    public void render()
     {
         if(isFilled) {
             g.fillRect(x, y, w, h);

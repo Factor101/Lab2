@@ -57,11 +57,11 @@ public class Flower extends Shape
                 isFilled
         ));
     }
-    public void render(Graphics g)
+    public void render()
     {
         for(Arc e : arcs)
         {
-            e.render(g);
+            e.render();
         }
     }
     public void changeOrigin(int x, int y) throws IllegalArgumentException

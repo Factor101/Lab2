@@ -1,5 +1,4 @@
 package Shapes;
-import java.awt.*;
 
 public class Rect extends Shape
 {
@@ -16,7 +15,7 @@ public class Rect extends Shape
         h = _h;
         isFilled = _isFilled;
     }
-    public void render(Graphics g)
+    public void render()
     {
         if(isFilled) {
             g.fillRect(x, y, w, h);

@@ -161,13 +161,13 @@ public class Word extends Shape
             x += w * 5;
         }
     }
-    public void render(Graphics g)
+    public void render()
     {
         for(ArrayList<Rect> e : letters)
         {
             for(Rect el : e)
             {
-                el.render(g);
+                el.render();
             }
         }
     }

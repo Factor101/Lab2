@@ -1,7 +1,5 @@
 package Shapes;
 
-import java.awt.Graphics;
-
 public class Polygon extends Shape
 {
     public int sides;
@@ -17,7 +15,7 @@ public class Polygon extends Shape
         sides = _sides;
         isFilled = _isFilled;
     }
-    public void render(Graphics g)
+    public void render()
     {
         if(isFilled) {
             g.fillPolygon(xPoints, yPoints, sides);
