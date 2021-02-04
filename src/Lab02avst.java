@@ -15,8 +15,7 @@ public class Lab02avst extends Applet
     Flower flower;
     Inscribed insc;
     Word apcs;
-    // tracks if graphics are defined for abstract shape class
-    public static boolean isGraphicsSet = false;
+
     public void init()
     {
         // resize
@@ -52,11 +51,8 @@ public class Lab02avst extends Applet
     }
     public void paint(@NotNull Graphics g)
     {
-        if(!isGraphicsSet) {
-            Shape.setGraphics(g);
-            // only called once
-            isGraphicsSet = true;
-        }
+        // define graphics for all shapes
+        Shape.setGraphics(g);
         // render cube
         cube.render();
         // render sphere
