@@ -7,6 +7,8 @@ import java.awt.*;
 
 public class Lab02avst extends Applet
 {
+    //TODO: put all shapes in ArrayList and render with range loop
+
     // declare variables
     Rect rect;
     RectPrism2D cube;
@@ -21,12 +23,20 @@ public class Lab02avst extends Applet
         // resize
         setSize(new Dimension(1920, 1080));
         // define variables
-        rect = new Rect(10, 10, 200, 200, false);
+        rect = new Rect(
+                new Point(10, 10),
+                200,
+                200,
+                false
+        );
         cube = new RectPrism2D(rect);
+
+        // origin + (w|h)/2
         oval = new Oval(
-                // origin + (w|h)/2
-                10 + (rect.w / 4),
-                10 + (rect.h / 4),
+                new Point(
+                        10 + (rect.w / 4),
+                        10 + (rect.h / 4)
+                ),
                 200,
                 200,
                 false

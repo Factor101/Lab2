@@ -1,6 +1,6 @@
 package Shapes;
 
-import java.awt.*;
+import java.awt.Point;
 
 public class Inscribed extends Shape
 {
@@ -59,5 +59,11 @@ public class Inscribed extends Shape
         outer.render();
         inner.render();
         triangle.render();
+    }
+
+    @Override
+    public void changeOrigin(int x, int y) throws IllegalArgumentException
+    {
+        if(y < 0) throw new IllegalArgumentException("Y must be greater than or equal to 0");
     }
 }
