@@ -7,6 +7,14 @@ public class Flower extends Shape
 {
     private ArrayList<Arc> arcs = new ArrayList<>();
     private Point origin;
+
+    /**
+     *
+     * @param orig point of origin
+     * @param w width
+     * @param h height
+     * @param isFilled render a filled shape or an unfilled shape
+     */
     public Flower(Point orig, int w, int h, boolean isFilled)
     {
         // Where e = 270:
@@ -64,6 +72,12 @@ public class Flower extends Shape
             e.render();
         }
     }
+    /**
+     *
+     * @param x new x value
+     * @param y new y value
+     * @throws IllegalArgumentException y must be greater than 0
+     */
     public void changeOrigin(int x, int y) throws IllegalArgumentException
     {
         if(y < 0) throw new IllegalArgumentException("Y must be greater than or equal to 0");

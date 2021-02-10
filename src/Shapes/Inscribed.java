@@ -1,5 +1,7 @@
 package Shapes;
 
+import org.jetbrains.annotations.TestOnly;
+
 import java.awt.Point;
 
 public class Inscribed extends Shape
@@ -13,6 +15,12 @@ public class Inscribed extends Shape
     private final Oval inner;
     private final Polygon triangle;
 
+    /**
+     *
+     * @param _origin origin Point
+     * @param _w width
+     * @param _h height
+     */
     public Inscribed(Point _origin, int _w, int _h)
     {
         origin = _origin;
@@ -61,7 +69,14 @@ public class Inscribed extends Shape
         triangle.render();
     }
 
+    /**
+     *
+     * @param x new x value
+     * @param y new y value
+     * @throws IllegalArgumentException y must be greater than 0
+     */
     @Override
+    @TestOnly
     public void changeOrigin(int x, int y) throws IllegalArgumentException
     {
         if(y < 0) throw new IllegalArgumentException("Y must be greater than or equal to 0");

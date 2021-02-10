@@ -14,6 +14,9 @@ public class RectPrism2D extends Shape
     private final int w;
     private final int h;
 
+    /**
+     * @param og original rectangle
+     */
     public RectPrism2D(Rect og)
     {
         ox = og.x;
@@ -47,6 +50,13 @@ public class RectPrism2D extends Shape
                 oy + ((h * 3) / 2)
         );
     }
+
+    /**
+     *
+     * @param x new x value
+     * @param y new y value
+     * @throws IllegalArgumentException y must be greater than 0
+     */
     public void changeOrigin(int x, int y) throws IllegalArgumentException
     {
         if(y < 0) throw new IllegalArgumentException("Y must be greater than or equal to 0");

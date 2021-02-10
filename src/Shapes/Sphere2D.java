@@ -7,6 +7,10 @@ public class Sphere2D extends Shape
     private final ArrayList<Oval> ovalsA = new ArrayList<>();
     private final ArrayList<Oval> ovalsB = new ArrayList<>();
 
+    /**
+     *
+     * @param base base Oval from which the sphere is constructed from
+     */
     public Sphere2D(Oval base)
     {
         final int subFactor = base.w / 4;
@@ -51,6 +55,12 @@ public class Sphere2D extends Shape
             e.render();
         }
     }
+    /**
+     *
+     * @param x new x value
+     * @param y new y value
+     * @throws IllegalArgumentException y must be greater than 0
+     */
     public void changeOrigin(int x, int y) throws IllegalArgumentException
     {
         if(y < 0) throw new IllegalArgumentException("Y must be greater than or equal to 0");

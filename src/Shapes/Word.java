@@ -7,6 +7,12 @@ public class Word extends Shape
 {
     private final ArrayList< ArrayList<Rect> > letters = new ArrayList<>();
 
+    /**
+     *
+     * @param origin where rendering will begin
+     * @param scale how much to scale letters by
+     * @param str letters to render
+     */
     public Word(Point origin, int scale, String str)
     {
         int x = origin.x;

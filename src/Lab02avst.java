@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Lab02avst extends Applet
 {
     // container for all shapes
-    public static final ArrayList<Shape> shapes = new ArrayList<>();
+    private static final ArrayList<Shape> shapes = new ArrayList<>();
 
     public void init()
     {
