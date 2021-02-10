@@ -3,75 +3,82 @@ import Shapes.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.applet.Applet;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.util.ArrayList;
 
 public class Lab02avst extends Applet
 {
-    //TODO: put all shapes in ArrayList and render with range loop
-
-    // declare variables
-    Rect rect;
-    RectPrism2D cube;
-    Oval oval;
-    Sphere2D sphere;
-    Flower flower;
-    Inscribed insc;
-    Word apcs;
+    // container for all shapes
+    public static final ArrayList<Shape> shapes = new ArrayList<>();
 
     public void init()
     {
-        // resize
+        // resize canvas
         setSize(new Dimension(1920, 1080));
-        // define variables
-        rect = new Rect(
-                new Point(10, 10),
-                200,
-                200,
-                false
-        );
-        cube = new RectPrism2D(rect);
 
-        // origin + (w|h)/2
-        oval = new Oval(
-                new Point(
-                        10 + (rect.w / 4),
-                        10 + (rect.h / 4)
-                ),
-                200,
-                200,
-                false
-        );
-        sphere = new Sphere2D(oval);
-        flower = new Flower(
+        final int globalWidth = 200;
+        final int globalHeight = 200;
+
+        // rectangular prism
+        shapes.add(new RectPrism2D(
+                new Rect(
+                        new Point(10, 10),
+                        globalWidth,
+                        globalHeight,
+                        false
+                )
+        ));
+
+        // sphere
+        shapes.add(new Sphere2D(
+                new Oval(
+                        new Point(
+                                // origin + (w|h)/2
+                                10 + (globalWidth / 4),
+                                10 + (globalHeight / 4)
+                        ),
+                        globalWidth,
+                        globalHeight,
+                        false
+                )
+        ));
+
+        // flower
+        shapes.add(new Flower(
                 new Point(400, 100),
-                100,
-                100,
+                globalWidth / 2,
+                globalHeight / 2,
                 true
-        );
-        insc = new Inscribed(
+        ));
+
+        // inscribed triangle / circle
+        shapes.add(new Inscribed(
                 new Point(600, 300),
-                300,
-                300
-        );
-        apcs = new Word(
+                globalWidth * 2,
+                globalHeight * 2
+        ));
+
+        // apcs letters
+        shapes.add(new Word(
                 new Point(100, 500),
                 20,
                 "APCS"
-        );
+        ));
     }
     public void paint(@NotNull Graphics g)
     {
-        // define graphics for all shapes
-        Shape.setGraphics(g);
-        // render cube
-        cube.render();
-        // render sphere
-        sphere.render();
-        // render flower
-        flower.render();
-        // render inscribed
-        insc.render();
-        // render apcs
-        apcs.render();
+        try {
+            // define graphics for all shapes
+            Shape.setGraphics(g);
+            // render all shapes
+            for (Shape e : shapes)
+            {
+                e.render();
+            }
+        } catch(Exception err) {
+            err.printStackTrace();
+        }
     }
 }

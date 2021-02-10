@@ -13,6 +13,7 @@ public class RectPrism2D extends Shape
     private final int ny;
     private final int w;
     private final int h;
+
     public RectPrism2D(Rect og)
     {
         ox = og.x;
